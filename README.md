@@ -7,9 +7,9 @@ Low-form factor altimeter for DU Spaceflight rocket and balloon launches
 ![circuit diagram](images/image1.jpg)
 
 Components: 
- : Adafruit Feather M0, 
- : DPS310 Sensor, 
- : 3.7V 400mAh LiPo
+- [Adafruit Feather M0](https://www.adafruit.com/product/2772)
+- [DPS310 Sensor](https://www.adafruit.com/product/4494) 
+- 3.7V 400mAh LiPo
 
 ## The Code
 
@@ -23,4 +23,11 @@ To use the device plug in the battery. The green light on the DPS310 sensor will
 
 ** Note: Flashing a new program to the board will reset the flash memory to zero and the max values will be lost **
 
-With `SMOOTHNESS` set to 3, the sample rate is ~1.6Hz. With the `RETAIN` parameter set to 2^11^, this gives a total usage time of (1/1.6) x 2^11^ = 21 minutes. The data is stored on a rolling basis with the "Loop index" indicating the end of the list. 
+With `SMOOTHNESS` set to 3, the sample rate is ~1.6Hz. With the `RETAIN` parameter set to 2^11, this gives a total usage time of (1/1.6) x 2^11 = 21 minutes. The data is stored on a rolling basis with the "Loop index" indicating the end of the list. 
+
+
+### ToDos
+
+- Low-battery indictor
+- Remove filtering for max_alt if inbuilt filter used
+- Checks for valid data incase I2C connection becomes erroneous 
